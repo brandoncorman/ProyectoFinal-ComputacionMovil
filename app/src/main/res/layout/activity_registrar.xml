@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".RegistrarActivity">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -13,13 +13,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".MainActivity">
-        <ImageView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="20dp"
             android:layout_weight="1"
-            android:src="@mipmap/icon"/>
+            android:gravity="center"
+            android:text="CREAR NUEVA CUENTA" />
         <EditText
-            android:id="@+id/User"
+            android:id="@+id/RegUser"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
@@ -27,32 +29,48 @@
             android:hint="Usuario"
             android:inputType="textEmailAddress"/>
         <EditText
-            android:id="@+id/Pass"
+            android:id="@+id/RegPass"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:layout_weight="1"
             android:hint="Contraseña"
             android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/RegNombre"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:hint="Nombre"
+            android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/RegApellido"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:hint="Apellidos"
+            android:inputType="textPersonName" />
         <Button
-            android:id="@+id/btnEntrar"
+            android:id="@+id/btnRegRegistrar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:layout_weight="1"
             android:background="#FF0000"
-            android:text="Entrar"
+            android:text="Registrar"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
             android:textStyle="bold" />
         <Button
-            android:id="@+id/btnRegistrar"
+            android:id="@+id/btnRegCancelar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:layout_weight="1"
             android:background="#0000FF"
-            android:text="Registrar"
+            android:text="CANCELAR"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
             android:textStyle="bold" />
