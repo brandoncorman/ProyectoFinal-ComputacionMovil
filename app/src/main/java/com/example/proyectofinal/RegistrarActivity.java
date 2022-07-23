@@ -41,7 +41,7 @@ public class RegistrarActivity extends AppCompatActivity implements View.OnClick
                     Toast.makeText(this, "ERROR: Campos vacíos", Toast.LENGTH_LONG).show();
                 } else if (dao.insertUsuario(u)) {
                     Toast.makeText(this, "¡Registro exitoso!", Toast.LENGTH_LONG).show();
-                    Intent i2 = new Intent(RegistrarActivity.this, InicioActivity.class);
+                    Intent i2 = new Intent(RegistrarActivity.this, MainActivity.class);
                     startActivity(i2);
                     finish();
                 } else {

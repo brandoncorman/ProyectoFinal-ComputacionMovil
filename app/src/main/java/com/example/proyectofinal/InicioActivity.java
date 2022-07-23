@@ -33,10 +33,9 @@ public class InicioActivity extends AppCompatActivity implements View.OnClickLis
     int id = 0;
     Usuario u;
     daoUsuario dao;
-    private TextView mJsonTxtView;
+    TextView mJsonTxtView;
     RecyclerView recyclerView;
     List<Data> dataList;
-    private Object Adaptery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +57,6 @@ public class InicioActivity extends AppCompatActivity implements View.OnClickLis
 
         recyclerView = findViewById(R.id.recyclerView);
         dataList = new ArrayList<>();
-        //mJsonTxtView = findViewById(R.id.jsonText);
         getAgents();
     }
 
