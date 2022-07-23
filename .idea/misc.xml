@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/brand/Desktop/ComputacionMovil/ProyectoFinal/app/src/main/res/layout/activity_editar.xml" value="0.1" />
-        <entry key="..\:/Users/brand/Desktop/ComputacionMovil/ProyectoFinal/app/src/main/res/layout/activity_main.xml" value="0.20989583333333334" />
-        <entry key="..\:/Users/brand/Desktop/ComputacionMovil/ProyectoFinal/app/src/main/res/layout/activity_registrar.xml" value="0.1" />
+        <entry key="..\:/Users/brand/Desktop/ComputacionMovil/ProyectoFinal/app/src/main/res/layout/activity_editar.xml" value="0.264" />
+        <entry key="..\:/Users/brand/Desktop/ComputacionMovil/ProyectoFinal/app/src/main/res/layout/activity_inicio.xml" value="0.152" />
+        <entry key="..\:/Users/brand/Desktop/ComputacionMovil/ProyectoFinal/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/brand/Desktop/ComputacionMovil/ProyectoFinal/app/src/main/res/layout/activity_registrar.xml" value="0.264" />
+        <entry key="..\:/Users/brand/Desktop/ComputacionMovil/ProyectoFinal/app/src/main/res/layout/agent_item.xml" value="0.2" />
+        <entry key="..\:/Users/brand/Desktop/ComputacionMovil/ProyectoFinal/app/src/main/res/layout/layout_foto.xml" value="0.23854166666666668" />
       </map>
     </option>
   </component>
