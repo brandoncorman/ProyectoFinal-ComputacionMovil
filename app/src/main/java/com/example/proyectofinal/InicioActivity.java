@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,8 +27,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class InicioActivity extends AppCompatActivity implements View.OnClickListener {
-    Button btnEditar, btnEliminar, btnSalir;
+public class InicioActivity extends AppCompatActivity {
     TextView nombre;
     int id = 0;
     Usuario u;
@@ -42,12 +41,6 @@ public class InicioActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
         nombre = (TextView)findViewById(R.id.nombreUsuario);
-        btnEditar=(Button)findViewById(R.id.btnEditar);
-        btnEliminar=(Button)findViewById(R.id.btnEliminar);
-        btnSalir=(Button)findViewById(R.id.btnSalir);
-        btnEditar.setOnClickListener(this);
-        btnEliminar.setOnClickListener(this);
-        btnSalir.setOnClickListener(this);
 
         Bundle b = getIntent().getExtras();
         id=b.getInt("id");
@@ -58,47 +51,6 @@ public class InicioActivity extends AppCompatActivity implements View.OnClickLis
         recyclerView = findViewById(R.id.recyclerView);
         dataList = new ArrayList<>();
         getAgents();
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnEditar:
-                Intent a = new Intent(InicioActivity.this, EditarActivity.class);
-                a.putExtra("id", id);
-                startActivity(a);
-                break;
-            case R.id.btnEliminar:
-                AlertDialog.Builder b = new AlertDialog.Builder(this);
-                b.setMessage("¿Estás seguro de eliminar tu cuenta?");
-                b.setCancelable(false);
-                b.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        if(dao.deleteUsuario(id)) {
-                            Toast.makeText(InicioActivity.this, "¡Se eliminó correctamente!", Toast.LENGTH_LONG).show();
-                            Intent a = new Intent(InicioActivity.this, MainActivity.class);
-                            startActivity(a);
-                            finish();
-                        } else {
-                            Toast.makeText(InicioActivity.this, "ERROR: No se eliminó cuenta", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
-                b.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
-                b.show();
-                break;
-            case R.id.btnSalir:
-                Intent i2 = new Intent(InicioActivity.this, MainActivity.class);
-                startActivity(i2);
-                finish();
-                break;
-        }
     }
 
     private void getAgents(){
@@ -141,5 +93,54 @@ public class InicioActivity extends AppCompatActivity implements View.OnClickLis
         Adaptery adaptery = new Adaptery (this, dataList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adaptery);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int idItem = item.getItemId();
+
+        switch (idItem) {
+            case R.id.item1:
+                Intent a = new Intent(InicioActivity.this, EditarActivity.class);
+                a.putExtra("id", id);
+                startActivity(a);
+                break;
+            case R.id.item2:
+                AlertDialog.Builder b = new AlertDialog.Builder(this);
+                b.setMessage("¿Estás seguro de eliminar tu cuenta?");
+                b.setCancelable(false);
+                b.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if(dao.deleteUsuario(id)) {
+                            Toast.makeText(InicioActivity.this, "¡Se eliminó correctamente!", Toast.LENGTH_LONG).show();
+                            Intent a = new Intent(InicioActivity.this, MainActivity.class);
+                            startActivity(a);
+                            finish();
+                        } else {
+                            Toast.makeText(InicioActivity.this, "ERROR: No se eliminó cuenta", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+                b.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                b.show();
+                break;
+            case R.id.item3:
+                Intent i2 = new Intent(InicioActivity.this, MainActivity.class);
+                startActivity(i2);
+                finish();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -7,70 +7,24 @@
     android:background="#2D2345"
     tools:context=".InicioActivity">
 
-    <Button
-        android:id="@+id/btnEditar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#EA525C"
-        android:text="Editar"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/nombreUsuario"
-        app:layout_constraintEnd_toStartOf="@+id/btnEliminar"
-        app:layout_constraintHorizontal_bias="0.438"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btnEliminar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#EA525C"
-        android:text="Eliminar"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/nombreUsuario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintBottom_toTopOf="@id/nombreUsuario" />
-
-    <Button
-        android:id="@+id/btnSalir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#EA525C"
-        android:text="Salir"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/nombreUsuario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toEndOf="@+id/btnEliminar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
     <TextView
         android:id="@+id/nombreUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:layout_weight="1"
+        app:layout_constraintVertical_bias="0.5"
         android:gravity="center"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        android:text="NOMBRE DE USUARIO"
+        android:text="@string/nombre_de_usuario"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnEliminar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

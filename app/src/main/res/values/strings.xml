@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">ProyectoFinal</string>
+    <string name="app_name">Proyecto Final</string>
+    <string name="editar_cuenta">EDITAR CUENTA</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="cancelar">CANCELAR</string>
+    <string name="nombre_de_usuario">NOMBRE DE USUARIO</string>
+    <string name="entrar">Entrar</string>
+    <string name="registrar">Registrar</string>
+    <string name="logo_valorant">Logo Valorant</string>
+    <string name="crear_nueva_cuenta">CREAR NUEVA CUENTA</string>
 </resources>
